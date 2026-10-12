@@ -1,0 +1,27 @@
+// Product catalog: [id, name, category, price, originalPrice, rating, reviews, remote image URL, description]
+const RAW=[
+[101,'Wireless Bluetooth Headphones','Electronics',2499,3999,4.5,128,'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85','Over-ear headphones with rich bass and 30-hour battery.'],
+[102,'5G Smartphone 128GB','Electronics',17999,22999,4.4,842,'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=85','6.5" AMOLED display, 50MP camera and fast charging.'],
+[103,'Fitness Smartwatch','Electronics',3499,5999,4.2,391,'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85','Tracks heart rate, sleep and steps with 7-day battery.'],
+[104,'14" Ultrabook Laptop','Electronics',45999,54999,4.6,210,'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85','Lightweight laptop with 16GB RAM and 512GB SSD.'],
+[105,'Running Sneakers','Fashion',1999,3499,4.3,560,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85','Breathable mesh sneakers with cushioned soles.'],
+[106,'Denim Jacket','Fashion',1799,2999,4.1,178,'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85','Classic-fit denim jacket in washed blue.'],
+[107,'Cotton Kurta Set','Fashion',1299,2199,4.4,245,'https://images.unsplash.com/photo-1583391733956-6c78276477e3?auto=format&fit=crop&w=900&q=85','Soft cotton kurta with matching pyjama.'],
+[108,'Casual Backpack 25L','Fashion',999,1799,4.5,612,'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85','Water-resistant backpack with laptop sleeve.'],
+[109,'Drip Coffee Maker','Home & Kitchen',2799,3999,4.3,96,'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85','Brews up to 6 cups with a reusable filter.'],
+[110,'Non-stick Cookware Set','Home & Kitchen',2199,3499,4.2,330,'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=85','3-piece induction-friendly cookware set.'],
+[111,'Air Fryer 4L','Home & Kitchen',4999,7499,4.5,704,'https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=900&q=85','Cook crispy meals with up to 90% less oil.'],
+[112,'Cotton Bedsheet Set','Home & Kitchen',899,1599,4.0,152,'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=85','Double bedsheet with two pillow covers.'],
+[113,'Vitamin C Face Serum','Beauty & Personal Care',449,799,4.3,890,'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85','Brightening serum for daily skincare.'],
+[114,'Cordless Beard Trimmer','Beauty & Personal Care',1199,1999,4.4,421,'https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=900&q=85','Rechargeable trimmer with 20 length settings.'],
+[115,'Herbal Shampoo 340ml','Beauty & Personal Care',299,499,4.1,267,'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85','Gentle sulphate-free shampoo for daily use.'],
+[116,'Eau de Parfum 100ml','Beauty & Personal Care',1299,2299,4.2,133,'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85','Long-lasting floral-woody fragrance.'],
+[117,'Polarized Sunglasses','Accessories',799,1499,4.3,204,'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85','UV400 polarized lenses with a light frame.'],
+[118,'Leather Wallet','Accessories',599,1199,4.4,388,'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=900&q=85','Slim bifold wallet with RFID protection.'],
+[119,'Analog Wrist Watch','Accessories',1499,2499,4.2,175,'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85','Stainless-steel watch with date display.'],
+[120,'Power Bank 20000mAh','Accessories',1599,2499,4.5,977,'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=900&q=85','Dual-output fast-charging power bank.'],
+[121,'Yoga Mat 6mm','Sports & Fitness',599,999,4.4,316,'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=85','Anti-slip, cushioned mat with carry strap.'],
+[122,'Adjustable Dumbbell Set','Sports & Fitness',2999,4499,4.3,142,'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85','Adjustable 2-10 kg dumbbells for home workouts.'],
+[123,'Speed Skipping Rope','Sports & Fitness',249,499,4.0,98,'https://images.unsplash.com/photo-1599058917212-d750089bc07b?auto=format&fit=crop&w=900&q=85','Tangle-free rope with ball bearings.'],
+[124,'Insulated Water Bottle 1L','Sports & Fitness',699,1099,4.5,520,'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85','Keeps drinks cold 24h and hot 12h.']];
+const PRODUCTS=RAW.map(([id,name,category,price,originalPrice,rating,reviews,image,description])=>({id,name,category,price,originalPrice,rating,reviews,description,image,inStock:id!==119}));
